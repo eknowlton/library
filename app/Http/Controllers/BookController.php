@@ -17,7 +17,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::with('editions')->get();
         return $books;
     }
 
@@ -30,8 +30,9 @@ class BookController extends Controller
     public function store(CreateBookRequest $request)
     {
         $book = new Book();
-        $book->fill($request->only('title', 'author', 'edition'));
         $book->save();
+        $book->editions()->create($request->only(['title', 'author', 'edition']));
+        $book->editions;
 
         return $book;
     }
@@ -44,6 +45,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+        $book->editions;
         return $book;
     }
 
@@ -57,18 +59,8 @@ class BookController extends Controller
      */
     public function update(UpdateBookRequest $request, Book $book)
     {
-
-        // only save the field if it is not null
-        $fields = collect(['title', 'author', 'edition']);
-
-        $fields->each(function($item, $key) use ($book, $request) {
-            if (!is_null($request->{$item})) {
-                $book->{$item} = $request->{$item};
-            }
-        });
-        
-        $book->save();
-
+        $book->editions()->create($request->only('title', 'author', 'edition'));
+        $book->editions;
         return $book;
     }
 

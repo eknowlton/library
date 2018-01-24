@@ -25,8 +25,7 @@ class CreateBookRequest extends FormRequest
     {
         return [
             'title' => 'required|string|min:3|max:255',
-            'author' => 'required|string|min:3|max:255',
-            'edition' => 'nullable|integer'
+            'author' => 'required|string|min:3|max:255'
         ];
     }
 }

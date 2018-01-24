@@ -59,7 +59,7 @@
 						},
 						{
 							"key": "edition",
-							"value": "2",
+							"value": "2nd",
 							"description": "",
 							"type": "text"
 						}
@@ -122,7 +122,13 @@
 					"formdata": [
 						{
 							"key": "title",
-							"value": "Teach Yourself Ruby Now",
+							"value": "Teach Yourself Ruby Now Again",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "SAMS",
 							"description": "",
 							"type": "text"
 						}

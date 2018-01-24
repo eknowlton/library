@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Book;
+use App\BookEdition;
 
 class BookApiTest extends TestCase
 {
@@ -33,7 +34,8 @@ class BookApiTest extends TestCase
      */
     public function testCanFetchBook() 
     {
-        $book = factory(Book::class)->create();
+        $book = factory(Book::class)
+            ->create();
 
         $response = $this->get('/api/library/books/' . $book->id );
 
@@ -52,8 +54,7 @@ class BookApiTest extends TestCase
     {
         $bookData = [
             'title' => 'Sams Teach Yourself SQL',
-            'author' => 'SAMS',
-            'edition' => 5
+            'author' => 'SAMS'
         ];
 
         $response = $this->json('POST', '/api/library/books', $bookData);
@@ -100,15 +101,14 @@ class BookApiTest extends TestCase
 
         $newBookData = [
             'title' => 'Sams Teach Yourself SQL',
-            'author' => 'SAMS',
-            'edition' => 6
+            'author' => 'SAMS'
         ];
 
         $response = $this->json('POST', '/api/library/books/' . $book->id, $newBookData);
 
         $response
             ->assertStatus(200)
-            ->assertJson($newBookData);
+            ->assertJson(['editions' => $newBookData]);
 
     }
 
@@ -122,7 +122,7 @@ class BookApiTest extends TestCase
         $book = factory(Book::class)->create();
 
         $newBookData = [
-            'title' => 1
+            'title' => 100
         ];
 
         $response = $this->json('POST', '/api/library/books/' . $book->id, $newBookData);
