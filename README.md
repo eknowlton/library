@@ -213,7 +213,9 @@ Postman collection included...
             "updated_at": "2018-01-24 22:58:30"
         }
     ]
-}```
+}
+```
+
 *Delete Book*
 
 `DELETE /api/library/books/6`
