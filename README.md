@@ -9,6 +9,9 @@ Run feature tests...
 
 `phpunit`
 
+Postman collection included...
+
+`book-library.postman_collection.json`
 
 ### API Endpoitns
 
