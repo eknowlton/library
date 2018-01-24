@@ -1,6 +1,14 @@
 # Library
 Basic library book API.
 
+Create database tables...
+
+`php artisan migrate`
+
+Run feature tests...
+
+`phpunit`
+
 
 ### API Endpoitns
 
