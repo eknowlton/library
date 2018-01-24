@@ -81,6 +81,33 @@
 			"response": []
 		},
 		{
+			"name": "Fetch Book",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{domain}}/api/library/books/{{bookId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"library",
+						"books",
+						"{{bookId}}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
 			"name": "Update Book",
 			"request": {
 				"method": "POST",
