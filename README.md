@@ -120,18 +120,29 @@ Basic library book API.
 {
     "title": "Learn Ruby in 5 Days",
     "author": "SAMS",
-    "edition": "2",
+    "edition": "2nd",
 }
 ```
 
 ```
 {
-    "id": 6,
+    "updated_at": "2018-01-24 23:01:56",
+    "created_at": "2018-01-24 23:01:56",
+    "id": 8,
     "title": "Learn Ruby in 5 Days",
     "author": "SAMS",
-    "edition": "2",
-    "created_at": "2018-01-24 22:04:08",
-    "updated_at": "2018-01-24 22:04:08"
+    "edition": "2nd",
+    "editions": [
+        {
+            "id": 7,
+            "book_id": 8,
+            "title": "Learn Ruby in 5 Days",
+            "author": "SAMS",
+            "edition": "2nd",
+            "created_at": "2018-01-24 23:01:56",
+            "updated_at": "2018-01-24 23:01:56"
+        }
+    ]
 }
 ```
 
