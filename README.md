@@ -62,4 +62,5 @@ Basic library book API.
 ```
 
 *Delete Book*
+
 `DELETE /api/library/books/6`
