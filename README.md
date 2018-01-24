@@ -60,3 +60,6 @@ Basic library book API.
     "updated_at": "2018-01-24 22:04:08"
 }
 ```
+
+*Delete Book*
+`DELETE /api/library/books/6`
