@@ -1,0 +1,148 @@
+{
+	"info": {
+		"name": "Book Library",
+		"_postman_id": "d842e218-5568-5d75-1ff9-7148c888441d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{domain}}/api/library/books",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"library",
+						"books"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Learn Ruby in 5 Days",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "author",
+							"value": "SAMS",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "edition",
+							"value": "2",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/api/library/books",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"library",
+						"books"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Teach Yourself Ruby Now",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{domain}}/api/library/books/{{bookId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"library",
+						"books",
+						"{{bookId}}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "applicaiton/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "{{domain}}/api/library/books/{{bookId}}",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"api",
+						"library",
+						"books",
+						"{{bookId}}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
