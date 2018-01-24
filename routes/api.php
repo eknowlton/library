@@ -11,7 +11,17 @@ use Illuminate\Http\Request;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
+
+Route::group(['prefix' => 'library'], function(){
+    Route::group(['prefix' => 'books'], function() {
+        Route::get('/', 'BookController@index');
+        Route::post('/', 'BookController@store');
+        Route::get('{book}', 'BookController@show');
+        Route::post('{book}', 'BookController@update');
+        Route::delete('{book}', 'BookController@destroy');
+    });
+});
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
