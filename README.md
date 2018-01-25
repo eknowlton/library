@@ -13,7 +13,7 @@ Postman collection included...
 
 `book-library.postman_collection.json`
 
-### API Endpoitns
+### API Endpoints
 
 *List Books*
 
