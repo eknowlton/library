@@ -11,6 +11,8 @@ class Book extends Model
 
     protected $appends = ['title', 'author', 'edition'];
 
+    protected $with = ['editions'];
+
     public function getTitleAttribute()
     {
         return $this->editions()->latest('created_at')->first()->title;

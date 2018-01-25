@@ -32,7 +32,6 @@ class BookController extends Controller
         $book = new Book();
         $book->save();
         $book->editions()->create($request->only(['title', 'author', 'edition']));
-        $book->editions;
 
         return $book;
     }
@@ -45,7 +44,6 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        $book->editions;
         return $book;
     }
 
@@ -60,7 +58,7 @@ class BookController extends Controller
     public function update(UpdateBookRequest $request, Book $book)
     {
         $book->editions()->create($request->only('title', 'author', 'edition'));
-        $book->editions;
+        $book->save(); // include most recent edition
         return $book;
     }
 

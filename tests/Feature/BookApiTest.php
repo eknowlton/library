@@ -58,7 +58,8 @@ class BookApiTest extends TestCase
     {
         $bookData = [
             'title' => 'Sams Teach Yourself SQL',
-            'author' => 'SAMS'
+            'author' => 'SAMS',
+            'edition' => '3rd'
         ];
 
         $response = $this->json('POST', '/api/library/books', $bookData);
@@ -105,7 +106,8 @@ class BookApiTest extends TestCase
 
         $newBookData = [
             'title' => 'Sams Teach Yourself SQL',
-            'author' => 'SAMS'
+            'author' => 'SAMS',
+            'edition' => '3rd'
         ];
 
         $response = $this->json('POST', '/api/library/books/' . $book->id, $newBookData);
