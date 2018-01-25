@@ -30,7 +30,7 @@ class Book extends Model
 
     public function editions() 
     {
-        return $this->hasMany(BookEdition::class);
+        return $this->hasMany(BookEdition::class)->orderBy('created_at', 'DESC');
 
     }
 }
