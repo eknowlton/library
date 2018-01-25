@@ -58,7 +58,7 @@ class BookController extends Controller
     public function update(UpdateBookRequest $request, Book $book)
     {
         $book->editions()->create($request->only('title', 'author', 'edition'));
-        $book->save(); // include most recent edition
+        $book->load('editions'); // include most recent edition
         return $book;
     }
 
