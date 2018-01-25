@@ -1,6 +1,17 @@
 # Library
 Basic library book API.
 
+Create database tables...
+
+`php artisan migrate`
+
+Run feature tests...
+
+`phpunit`
+
+Postman collection included...
+
+`book-library.postman_collection.json`
 
 ### API Endpoitns
 
@@ -202,7 +213,9 @@ Basic library book API.
             "updated_at": "2018-01-24 22:58:30"
         }
     ]
-}```
+}
+```
+
 *Delete Book*
 
 `DELETE /api/library/books/6`
