@@ -37,6 +37,10 @@ class BookApiTest extends TestCase
         $book = factory(Book::class)
             ->create();
 
+        $book->each(function($book) {
+            $book->editions()->saveMany(factory(BookEdition::class, 2)->make());
+        });
+
         $response = $this->get('/api/library/books/' . $book->id );
 
         $response
@@ -108,7 +112,7 @@ class BookApiTest extends TestCase
 
         $response
             ->assertStatus(200)
-            ->assertJson(['editions' => $newBookData]);
+            ->assertJson($newBookData);
 
     }
 
